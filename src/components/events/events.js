@@ -4,16 +4,15 @@ class Events extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {'title': '', duration: 0, time: null}
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {'title': '', duration: '', time: ''}
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleClick(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    let event = {
-
-    }
+    let event = this.state;
     this.props.addEvent(event);
+    this.state = {'title': '', duration: 0, time: ''};
   }
 
   update(field) {
@@ -41,16 +40,19 @@ class Events extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="add-event">
         <h1>Add Event</h1>
-        <input onChange={this.update("title")} type="text" name="title" placeholder="Title"></input>
-        Duration (in minutes)<input onChange={this.update("duration")} type="number" name="duration" placeholder="Duration"></input>
-      Time <select onChange={this.update("time")}>
+        Event:
+        <input onChange={this.update("title")} type="text" name="title" placeholder="Title" value={this.state.title}></input><br/>
+        Duration: (in minutes)
+        <input value={this.state.duration} onChange={this.update("duration")} type="number" name="duration" placeholder="Duration"></input><br/>
+        Time: <select value={this.state.time} onChange={this.update("time")}>
         <option>N/A</option>
         {this.times().map(time => (
           <option key={time} value={time}>{time}</option>
         ))}
-      </select>
+        </select><br/>
+        <button onClick={this.handleSubmit}>Add Event</button>
       </div>
     )
   }
