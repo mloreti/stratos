@@ -4,7 +4,10 @@ class EventsList extends React.Component {
   render() {
     return(
       <div>
-        <h1>Hello</h1>
+        <h1>Events</h1>
+        {this.props.events.map((event, idx) => (
+          <div key={idx}>{event.title}</div>
+        ))}
       </div>
     )
   }
