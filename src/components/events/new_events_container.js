@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Events from './events';
+import NewEvents from './new_events';
 import { addEvent } from '../../actions/event_actions';
 
 const mapStateToProps = state => ({
@@ -10,9 +10,9 @@ const mapDispatchToProps = dispatch => ({
   addEvent: event => dispatch(addEvent(event))
 });
 
-const EventsContainer = connect(
+const NewEventsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Events);
+)(NewEvents);
 
-export default EventsContainer;
+export default NewEventsContainer;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Events extends React.Component {
+class NewEvents extends React.Component {
 
   constructor(props) {
     super(props);
@@ -58,4 +58,4 @@ class Events extends React.Component {
   }
 }
 
-export default Events;
+export default NewEvents;

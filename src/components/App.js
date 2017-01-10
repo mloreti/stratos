@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import Store from '../store/store';
-import EventsContainer from './events/events_container';
+import NewEventsContainer from './events/new_events_container';
 import EventsListContainer from './events/events_list_container';
 import './App.scss'
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Provider store={Store}>
         <div>
-          <EventsContainer />
+          <NewEventsContainer />
           <EventsListContainer />
         </div>
       </Provider>
