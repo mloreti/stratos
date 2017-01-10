@@ -24,6 +24,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --display-errors-details --inline --hot --content-base ./public"
+    "start": "webpack-dev-server --progress --display-errors-details --inline --hot --content-base ./public",
+    "build": "webpack --config webpack.config.js"
   }
 }
