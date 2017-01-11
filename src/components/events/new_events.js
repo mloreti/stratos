@@ -35,7 +35,16 @@ class NewEvents extends React.Component {
         times.push(`${i}:00 ${time}`)
       }
     }
-    return times;
+    return times.map(time => (
+      <option key={time} value={time}>{time}</option>
+    ));
+  }
+
+  durations() {
+    let durations = [[15,"15 minutes"], [30,"30 minutes"], [45,"45 minutes"], [60,"1 hour"], [120,"2 hours"]];
+    return durations.map(time => (
+      <option value={time[0]} key={time[0]}>{time[1]}</option>
+    ))
   }
 
   render(){
@@ -44,13 +53,14 @@ class NewEvents extends React.Component {
         <h1>Add Event</h1>
         Event:
         <input onChange={this.update("title")} type="text" name="title" placeholder="Title" value={this.state.title}></input><br/>
-        Duration: (in minutes)
-        <input value={this.state.duration} onChange={this.update("duration")} type="number" name="duration" placeholder="Duration"></input><br/>
-        Time: <select value={this.state.time} onChange={this.update("time")}>
-        <option>N/A</option>
-        {this.times().map(time => (
-          <option key={time} value={time}>{time}</option>
-        ))}
+        Duration:
+        <select value={this.state.duration} onChange={this.update("duration")}>
+          {this.durations()}
+        </select><br/>
+        Time:
+        <select value={this.state.time} onChange={this.update("time")}>
+          <option>N/A</option>
+          {this.times()}
         </select><br/>
         <button onClick={this.handleSubmit}>Add Event</button>
       </div>
