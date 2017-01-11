@@ -2,10 +2,12 @@ import React from 'react';
 
 class EventsList extends React.Component {
   render() {
+    console.log(this.props);
+    let noTime = this.props.events.noTime;
     return(
       <div className="events-list">
         <h1>Events</h1>
-        {this.props.events.map((event, idx) => (
+        {noTime.map((event, idx) => (
           <div key={idx}>
             <div className="event-top-row">
               <h3>{event.title}</h3>

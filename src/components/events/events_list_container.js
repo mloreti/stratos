@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import EventsList from './events_list';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   events: state.events
 });
 
