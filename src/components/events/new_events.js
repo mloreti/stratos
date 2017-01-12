@@ -35,8 +35,8 @@ class NewEvents extends React.Component {
         times.push(`${i}:00 ${time}`)
       }
     }
-    return times.map(time => (
-      <option key={time} value={time}>{time}</option>
+    return times.map((time, idx) => (
+      <option key={time} value={idx}>{time}</option>
     ));
   }
 
