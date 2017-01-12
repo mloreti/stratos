@@ -1,23 +1,28 @@
 import React from 'react';
 
 class EventsList extends React.Component {
+  getTimes() {
+    let times = [];
+    for(let i = 0; i < 12; i++) {
+      let hour = i + 8;
+      if (hour % 12 == 0) {
+        times.push(`${12}:00`)
+      }
+      else if (hour < 10 || hour % 12 < 10) {
+        times.push(`0${hour % 12}:00`)
+      }
+    }
+    return times.map((time, idx) => (
+      <h4 key={idx}>{time}</h4>
+    ))
+  }
+
   render() {
-    console.log(this.props);
     let noTime = this.props.events.noTime;
     return(
       <div className="events-list">
         <h1>Events</h1>
-        {noTime.map((event, idx) => (
-          <div key={idx}>
-            <div className="event-top-row">
-              <h3>{event.title}</h3>
-              <h3>{event.time}</h3>
-            </div>
-            <div className="event-bottom-row">
-              <h4>{event.duration}</h4>
-            </div>
-          </div>
-        ))}
+        {this.getTimes()}
       </div>
     )
   }
