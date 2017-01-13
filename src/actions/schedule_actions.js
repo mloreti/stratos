@@ -1,4 +1,3 @@
-export const makeSchedule = events => ({
-  type: "MAKE_SCHEDULE",
-  events
+export const makeSchedule = () => ({
+  type: "MAKE_SCHEDULE"
 });

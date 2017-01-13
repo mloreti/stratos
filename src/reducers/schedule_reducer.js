@@ -1,14 +1,11 @@
-let defaultState = new Array(32);
-
-const ScheduleReducer = (state = defaultState, action) => {
+const ScheduleReducer = (state = {}, action) => {
+  console.log(action);
   switch (action.type) {
     case "MAKE_SCHEDULE":
-      console.log(action.events);
+      console.log("Making schedule");
       return state;
-      break
     case "SHUFFLE":
       return state;
-      break;
     default:
       return state
   }

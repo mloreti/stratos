@@ -1,15 +1,19 @@
-const EventsReducer = (state = {noTime: [], withTime: []}, action) => {
+let times = new Array(8).fill(false);
 
+let defaultState = {
+  fixed: times,
+  schedule: times,
+  options: [],
+  events: []
+}
+
+const EventsReducer = (state = defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case "RECEIVE_EVENT":
-      let newState = Object.assign({}, state);
-      if (action.event.time != "") {
-        newState.withTime.push(action.event);
-      } else {
-        newState.noTime.push(action.event);
-      }
-      return newState;
+    case "ADD_EVENT":
+
+    case "ADD_NO_TIME_EVENT":
+      return state;
     default:
       return state;
   }
