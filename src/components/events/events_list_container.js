@@ -5,7 +5,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
 });
 
 const EventsListContainer = connect(
