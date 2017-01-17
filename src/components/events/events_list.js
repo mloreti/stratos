@@ -26,11 +26,16 @@ class EventsList extends React.Component {
     }
   }
 
+  eventClick(e) {
+    e.preventDefault();
+    console.log(e.target.value);
+  }
+
   listEvents() {
     return(
       this.state.events.map(event => (
         <div key={event.id}>
-          <h3>{event.title}</h3>
+          <h3 onClick={this.eventClick}>{event.title}</h3>
         </div>
       ))
     )
