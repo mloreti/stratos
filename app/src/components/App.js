@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss'
 
-const App = () => {
-  return(
-    <h1>Hello</h1>
-  )
-}
+const App = ({ children }) => (
+  <div className="main">
+      {children}
+  </div>
+);
 
 export default App;
