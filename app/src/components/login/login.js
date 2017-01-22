@@ -22,7 +22,26 @@ class LogInPage extends React.Component {
 
   render() {
     return (
-      <h1>Login</h1>
+      <div className="login-page">
+        <h1>Login</h1>
+        <input
+          onChange={this.onChange}
+          name="email"
+          label="email"
+          placeholder="email"
+          value={this.state.credentials.email} />
+        <br/>
+        <input
+          onChange={this.onChange}
+          name="password"
+          label="password"
+          placeholder="password"
+          value={this.state.credentials.password} />
+        <br/>
+        <input
+          type="submit"
+          onClick={this.onSave} />
+      </div>
     );
   }
 }
