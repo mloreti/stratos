@@ -1,6 +1,6 @@
 class SessionApi {
   static login(credentials) {
-    const request = new Request('http://localhost:5000/login', {
+    const request = new Request('http://localhost:3000/login', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json'
@@ -17,4 +17,4 @@ class SessionApi {
   }
 }
 
-export default SessionApi;  
+export default SessionApi;
